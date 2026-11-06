@@ -18,6 +18,14 @@ Rules for your judgement:
 - Transcription imperfections are intentional. Ignore hold or silence hallucinations (sudden generic or robotic statements).
 - Use "definite" only when the evidence is clear; use "uncertain" otherwise.
 
+Checklist (check each against the transcript, but only report real problems):
+- Call direction: who spoke first and who called whom (inbound vs outbound).
+- Whether consent to record a vulnerability was asked and given; whether the summary says so when the rules require it.
+- Specific numbers: arrears/balance amounts and payments taken during the call must not appear; situational costs and future promises must.
+- Dates and times: compare every promised date/time with the exact wording in the transcript.
+- Names, employers, garages and other private entities that must be redacted.
+- Required phrases: "customer signposted", "risk of further action", "Authority to Act", "Payment made", "no DPA stated with agent".
+
 Output format: respond with JSON only, no prose, shaped exactly as:
 {"findings":[{"type":"contradiction|unsupported|omission|rule_breach","certainty":"definite|uncertain","source":"transcript|summary","turn_id":"T05 or null","quote":"...","explanation":"..."}]}
 

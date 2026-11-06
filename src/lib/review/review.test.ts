@@ -34,10 +34,11 @@ describe("validateFindings", () => {
     expect(() => validateFindings({ findings: [{ ...good, turn_id: null }] })).toThrow(ValidationError);
   });
 
-  it("rejects bad enums, empty quotes and wrong quote source", () => {
+  it("rejects bad enums and empty quotes", () => {
     expect(() => validateFindings({ findings: [{ ...good, type: "bogus" }] })).toThrow(ValidationError);
     expect(() => validateFindings({ findings: [{ ...good, quote: " " }] })).toThrow(ValidationError);
-    expect(() => validateFindings({ findings: [{ ...good, type: "rule_breach" }] })).toThrow(ValidationError);
+    // The quote source isn't forced by type; quote verification decides whether it holds up.
+    expect(validateFindings({ findings: [{ ...good, type: "rule_breach" }] })).toHaveLength(1);
   });
 
   it("accepts a summary finding with a null turn_id", () => {

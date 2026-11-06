@@ -16,8 +16,6 @@ export type Finding = {
   explanation: string;
 };
 
-const TRANSCRIPT_TYPES: FindingType[] = ["contradiction", "omission"];
-
 export class ValidationError extends Error {}
 
 function oneOf<T extends string>(value: unknown, allowed: readonly T[], field: string, i: number): T {
@@ -45,11 +43,6 @@ export function validateFindings(data: unknown): Finding[] {
     const type = oneOf(o.type, FINDING_TYPES, "type", i);
     const certainty = oneOf(o.certainty, CERTAINTIES, "certainty", i);
     const source = oneOf(o.source, SOURCES, "source", i);
-
-    const expected: Source = TRANSCRIPT_TYPES.includes(type) ? "transcript" : "summary";
-    if (source !== expected) {
-      throw new ValidationError(`findings[${i}]: a ${type} finding must quote the ${expected}`);
-    }
 
     let turn_id: string | null = null;
     if (source === "transcript") {

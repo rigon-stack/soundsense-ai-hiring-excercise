@@ -9,11 +9,28 @@ h2 { font-size: 1rem; margin: 0 0 8px; }
 .grid { display: grid; gap: 16px; grid-template-columns: 1fr; align-items: start; }
 @media (min-width: 900px) { .grid { grid-template-columns: 3fr 2fr 2fr; } }
 section, aside { border: 1px solid var(--border); border-radius: 8px; padding: 12px; min-width: 0; }
-.findings:empty { display: none; }
-@media (min-width: 900px) { .findings:empty { display: block; border-style: dashed; min-height: 80px; } }
 .turns { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
 .meta, .muted { color: var(--muted); font-size: 0.85em; }
 .speaker { margin-right: 2px; }
 .note { font-style: italic; color: var(--muted); }
 .summary { margin: 0; white-space: pre-wrap; }
 .error { color: #c00; }
+button { font: inherit; padding: 4px 14px; cursor: pointer; }
+button:disabled { cursor: default; opacity: 0.6; }
+button.link { border: 0; background: none; padding: 0; color: #2563eb; text-decoration: underline; }
+.findings:empty { display: block; }
+.hl { background: #fde68a55; outline: 1px solid #f59e0b; border-radius: 4px; }
+.status { font-weight: 700; font-size: 1.1rem; margin: 0 0 8px; }
+.status.passed { color: #15803d; }
+.status.not_passed { color: #b91c1c; }
+.finding-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 10px; }
+.finding { border: 1px solid var(--border); border-left: 4px solid #b91c1c; border-radius: 6px; padding: 8px; }
+.finding.uncertain { border-left-color: #d97706; }
+.finding.unverified { border-left-color: #888; border-style: dashed; opacity: 0.85; }
+.badges { display: flex; flex-wrap: wrap; gap: 6px; }
+.badge { font-size: 0.75rem; border: 1px solid var(--border); border-radius: 999px; padding: 0 8px; }
+.badge.definite { border-color: #b91c1c; }
+.badge.uncertain { border-color: #d97706; }
+.unverified-badge { background: #8883; }
+blockquote { margin: 6px 0; padding-left: 8px; border-left: 3px solid var(--border); font-style: italic; }
+.evidence, .finding p { margin: 4px 0; }
