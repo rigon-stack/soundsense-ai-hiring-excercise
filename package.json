@@ -3,11 +3,17 @@
   "version": "0.1.0",
   "private": true,
   "scripts": {
+    "gen:rules": "node scripts/gen-rules.mjs",
+    "predev": "node scripts/gen-rules.mjs",
     "dev": "next dev",
+    "prebuild": "node scripts/gen-rules.mjs",
     "build": "next build",
     "start": "next start",
+    "prelint": "node scripts/gen-rules.mjs",
     "lint": "eslint .",
-    "test": "vitest run"
+    "pretest": "node scripts/gen-rules.mjs",
+    "test": "vitest run",
+    "typecheck": "node scripts/gen-rules.mjs && tsc --noEmit"
   },
   "dependencies": {
     "next": "^16.4.5",
