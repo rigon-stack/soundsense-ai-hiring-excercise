@@ -1,0 +1,19 @@
+:root { color-scheme: light dark; --border: #8884; --muted: #888; }
+* { box-sizing: border-box; }
+body { margin: 0; font: 15px/1.5 system-ui, sans-serif; }
+main { max-width: 1400px; margin: 0 auto; padding: 16px; }
+.top { display: flex; flex-wrap: wrap; align-items: center; gap: 16px; margin-bottom: 16px; }
+.top h1 { font-size: 1.2rem; margin: 0; flex: 1 1 auto; }
+select { font: inherit; padding: 4px 8px; }
+h2 { font-size: 1rem; margin: 0 0 8px; }
+.grid { display: grid; gap: 16px; grid-template-columns: 1fr; align-items: start; }
+@media (min-width: 900px) { .grid { grid-template-columns: 3fr 2fr 2fr; } }
+section, aside { border: 1px solid var(--border); border-radius: 8px; padding: 12px; min-width: 0; }
+.findings:empty { display: none; }
+@media (min-width: 900px) { .findings:empty { display: block; border-style: dashed; min-height: 80px; } }
+.turns { list-style: none; margin: 0; padding: 0; display: grid; gap: 6px; }
+.meta, .muted { color: var(--muted); font-size: 0.85em; }
+.speaker { margin-right: 2px; }
+.note { font-style: italic; color: var(--muted); }
+.summary { margin: 0; white-space: pre-wrap; }
+.error { color: #c00; }
