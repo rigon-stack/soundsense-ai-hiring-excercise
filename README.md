@@ -2,7 +2,7 @@
 
 A web app that reviews an existing collections-call summary against its transcript and `summary-rules.txt`. It does not generate summaries.
 
-Live site: _add the Netlify URL here_
+Live site: https://creative-bavarois-15d6e8.netlify.app/
 
 ## Run it
 
